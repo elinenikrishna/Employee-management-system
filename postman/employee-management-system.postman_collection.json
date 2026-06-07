@@ -1,0 +1,9 @@
+{
+  "info": {"name": "Employee Management System", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "item": [
+    {"name": "Create Department", "request": {"method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": "http://localhost:8080/api/v1/departments", "body": {"mode":"raw", "raw":"{\n  \"code\": \"SEC\",\n  \"name\": \"Security Engineering\",\n  \"costCenter\": \"CC-2001\"\n}"}}},
+    {"name": "Create Employee", "request": {"method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": "http://localhost:8080/api/v1/employees", "body": {"mode":"raw", "raw":"{\n  \"employeeNumber\": \"EMP900001\",\n  \"firstName\": \"Krishna\",\n  \"lastName\": \"Teja\",\n  \"email\": \"krishna.teja@example.com\",\n  \"phone\": \"+1-361-737-5053\",\n  \"status\": \"ACTIVE\",\n  \"jobLevel\": \"L2_ENGINEER\",\n  \"jobTitle\": \"Java Backend Developer\",\n  \"hireDate\": \"2025-06-01\",\n  \"salary\": 95000,\n  \"departmentId\": 1\n}"}}},
+    {"name": "Search Employees", "request": {"method": "GET", "url": "http://localhost:8080/api/v1/employees?keyword=java&status=ACTIVE&page=0&size=25&sortBy=lastName&direction=ASC"}},
+    {"name": "Generate 5M Employees", "request": {"method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": "http://localhost:8080/api/v1/admin/data-loader/employees", "body": {"mode":"raw", "raw":"{\n  \"targetCount\": 5000000,\n  \"batchSize\": 10000\n}"}}}
+  ]
+}
